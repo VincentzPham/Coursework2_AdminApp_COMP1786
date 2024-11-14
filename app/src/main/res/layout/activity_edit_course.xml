@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/label_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Name" />
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/error_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_name"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/label_day_of_week"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Day of the Week" />
+
+        <Spinner
+            android:id="@+id/spinner_day_of_the_week"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:entries="@array/days_of_week_array" />
+
+        <TextView
+            android:id="@+id/error_day_of_the_week"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_day_of_the_week"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/label_time_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_day_of_the_week"
+            android:layout_marginTop="16dp"
+            android:text="Start Time" />
+
+        <EditText
+            android:id="@+id/edit_time_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/error_time_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_time_start"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/label_capacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_time_start"
+            android:layout_marginTop="16dp"
+            android:text="Capacity" />
+
+        <EditText
+            android:id="@+id/edittext_capacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Enter capacity"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/error_capacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_capacity"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/label_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_capacity"
+            android:layout_marginTop="16dp"
+            android:text="Duration (minutes)" />
+
+        <EditText
+            android:id="@+id/edittext_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Enter duration"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/error_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_duration"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/label_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_duration"
+            android:layout_marginTop="16dp"
+            android:text="Price" />
+
+        <EditText
+            android:id="@+id/edittext_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Enter price"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/error_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_price"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/label_class_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_price"
+            android:layout_marginTop="16dp"
+            android:text="Class Type" />
+
+        <Spinner
+            android:id="@+id/spinner_class_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:entries="@array/class_type_array" />
+
+        <TextView
+            android:id="@+id/error_class_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_class_type"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/label_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_class_type"
+            android:layout_marginTop="16dp"
+            android:text="Description" />
+
+        <EditText
+            android:id="@+id/edittext_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Enter description"
+            android:inputType="textMultiLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" android:gravity="right">
+
+            <Button
+                android:id="@+id/button_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edittext_description"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="24dp"
+                android:backgroundTint="@color/design_default_color_error"
+                android:visibility="gone"
+                android:text="Delete" />
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edittext_description"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:text="Save" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

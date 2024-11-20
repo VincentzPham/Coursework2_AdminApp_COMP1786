@@ -59,7 +59,7 @@ public class ClassAdapter extends BaseAdapter implements Filterable {
         YogaClass yogaClass = (YogaClass) getItem(position);
         ((TextView) convertView.findViewById(R.id.name)).setText(yogaClass.getName());
         ((TextView) convertView.findViewById(R.id.description)).setText(yogaClass.getTeacher());
-        ((TextView) convertView.findViewById(R.id.date)).setText(String.format("Day of week: %s", yogaClass.getDate()));
+        ((TextView) convertView.findViewById(R.id.date)).setText(String.format("Day Start: %s", yogaClass.getDate()));
 
         return convertView;
     }

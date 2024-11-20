@@ -14,4 +14,23 @@
         <item>Intermediate</item>
         <item>Advanced</item>
     </string-array>
+
+    <string name="error_invalid_date_format">Invalid date format. Please use dd/MM/yyyy.</string>
+    <string name="error_date_not_matching_course_day">The date must match the course\'s day of the week: %1$s.</string>
+    <string name="error_enter_class_name">Please enter the class name.</string>
+    <string name="error_enter_date">Please enter the date.</string>
+    <string name="error_enter_teacher_name">Please enter the teacher\'s name.</string>
+
+    <string name="error_enter_course_name">Please enter the course name.</string>
+    <string name="error_select_day_of_week">Please select a day of the week.</string>
+    <string name="error_enter_start_time">Please enter the start time.</string>
+    <string name="error_enter_capacity">Please enter the capacity.</string>
+    <string name="error_invalid_capacity">Capacity must be a valid number.</string>
+    <string name="error_enter_duration">Please enter the duration.</string>
+    <string name="error_invalid_duration">Duration must be a valid number.</string>
+    <string name="error_enter_price">Please enter the price.</string>
+    <string name="error_invalid_price">Price must be a valid number.</string>
+    <string name="error_select_class_type">Please select a class type.</string>
+
+
 </resources>

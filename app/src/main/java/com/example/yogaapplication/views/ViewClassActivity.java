@@ -39,13 +39,15 @@ public class ViewClassActivity extends AppCompatActivity {
         dbHelper.syncClassesWithFirebase();
 
 
-        classes = getAllClasses();
+        classes = getAllClasses(); // Lấy toàn bộ danh sách lớp học từ database
 
-
+        // Gán ListView và SearchView với các thành phần giao diện
         listViewClass = findViewById(R.id.list_class);
         searchView = findViewById(R.id.search_bar);
+
+        // Tạo adapter cho danh sách lớp học
         classViewAdapter = new ClassAdapter(this, classes);
-        listViewClass.setAdapter(classViewAdapter);
+        listViewClass.setAdapter(classViewAdapter); // Gán adapter cho ListView
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

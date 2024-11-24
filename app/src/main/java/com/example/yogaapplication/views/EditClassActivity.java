@@ -910,7 +910,7 @@
 //
 
 
-// code version 4.0
+// code version 4.0 optimized
 package com.example.yogaapplication.views;
 
 import android.app.AlertDialog;

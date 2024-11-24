@@ -17,6 +17,7 @@ import java.util.List;
 
 public class ClassAdapter extends BaseAdapter implements Filterable {
 
+    // Adapter liên kết dữ liệu là danh sách các lớp học yoga
     //Dữ liệu liên kết bởi Adapter là một mảng các sản phẩm
 
     private Activity activity;
@@ -31,7 +32,7 @@ public class ClassAdapter extends BaseAdapter implements Filterable {
 
     @Override
     public int getCount() {
-        //Trả về tổng số phần tử, nó được gọi bởi ListView
+        //Trả về tổng số lớp học Yoga, nó được gọi bởi ListView
         return listClass.size();
     }
 
@@ -44,7 +45,7 @@ public class ClassAdapter extends BaseAdapter implements Filterable {
 
     @Override
     public long getItemId(int position) {
-        //Trả về một ID của phần
+        //Trả về một ID của phần tử
         return position;
     }
 
@@ -52,10 +53,11 @@ public class ClassAdapter extends BaseAdapter implements Filterable {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = activity.getLayoutInflater();
 
-        // Đổ dữ liệu vào biến View, view này chính là những gì nằm trong item_name.xml
+        // Đổ dữ liệu vào biến View, view này chính là những gì nằm trong item_view.xml
         convertView = inflater.inflate(R.layout.item_view, null);
 
-        //Bind sữ liệu phần tử vào View
+        //Bind dữ liệu phần tử vào View
+        // Hiển thị thông tin lớp học yoga tại vị trí position trong danh sách lên View
         YogaClass yogaClass = (YogaClass) getItem(position);
         ((TextView) convertView.findViewById(R.id.name)).setText(yogaClass.getName());
         ((TextView) convertView.findViewById(R.id.description)).setText(yogaClass.getTeacher());
@@ -69,6 +71,7 @@ public class ClassAdapter extends BaseAdapter implements Filterable {
         return new Filter() {
             @Override
             protected FilterResults performFiltering(CharSequence charSequence) {
+                // Lọc danh sách lớp học yoga theo tên giáo viên hoặc ngày học
                 String strSearch = charSequence.toString();
                 if (strSearch.isEmpty()) {
                     listClass = listClassOld;
@@ -92,6 +95,7 @@ public class ClassAdapter extends BaseAdapter implements Filterable {
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                // Cập nhật danh sách lớp học yoga sau khi lọc và thông báo cho Adapter
                 listClass = (ArrayList<YogaClass>) filterResults.values;
                 notifyDataSetChanged();
             }

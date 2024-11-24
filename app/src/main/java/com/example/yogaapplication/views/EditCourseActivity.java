@@ -338,6 +338,8 @@
 ////
 ////}
 //
+
+
 ////code version 2.0
 //package com.example.yogaapplication.views;
 //
@@ -363,6 +365,10 @@
 //import com.example.yogaapplication.R;
 //import com.example.yogaapplication.entity.Course;
 //
+//
+//import android.app.TimePickerDialog;
+//
+//import java.util.Locale;
 //public class EditCourseActivity extends AppCompatActivity {
 //
 //    private EditText editName, editTimeStart, editCapacity, editDuration, editPrice, editDescription;
@@ -431,6 +437,18 @@
 //                }
 //            });
 //        }
+//
+//        // Set OnClickListener to show the TimePickerDialog
+//        editTimeStart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                showTimePickerDialog();
+//            }
+//        });
+//
+////        // Optionally, prevent the EditText from being editable
+////        editTimeStart.setFocusable(false);
+////        editTimeStart.setClickable(true);
 //
 //        buttonSave.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -515,6 +533,29 @@
 ////            }
 ////        }
 ////    }
+//
+//    private void showTimePickerDialog() {
+//        // Show a TimePickerDialog to select the start time
+//        String currentTimeStr = editTimeStart.getText().toString().trim();
+//        int hour = 0;
+//        int minute = 0;
+//
+//        if (!currentTimeStr.isEmpty()) {
+//            String[] timeParts = currentTimeStr.split(":");
+//            if (timeParts.length == 2) {
+//                hour = Integer.parseInt(timeParts[0]);
+//                minute = Integer.parseInt(timeParts[1]);
+//            }
+//        }
+//
+//        TimePickerDialog timePickerDialog = new TimePickerDialog(EditCourseActivity.this,
+//                (view, selectedHour, selectedMinute) -> {
+//                    String timeStr = String.format(Locale.getDefault(), "%02d:%02d", selectedHour, selectedMinute);
+//                    editTimeStart.setText(timeStr);
+//                }, hour, minute, true);
+//        timePickerDialog.show();
+//    }
+//
 //
 //    //code version 2.0
 //    private void saveCourse() {
@@ -722,7 +763,7 @@
 //}
 
 
-//code version 3.0
+//code version 3.0 optimized
 package com.example.yogaapplication.views;
 
 import android.app.AlertDialog;
@@ -1136,3 +1177,4 @@ public class EditCourseActivity extends AppCompatActivity {
         Toast.makeText(EditCourseActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 }
+

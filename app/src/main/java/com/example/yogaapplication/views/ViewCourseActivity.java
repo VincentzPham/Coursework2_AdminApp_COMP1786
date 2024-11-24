@@ -32,10 +32,10 @@ public class ViewCourseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_course);
 
-        dbHelper = new DbHelper(this);
-        dbHelper.syncCoursesWithFirebase();
+        dbHelper = new DbHelper(this); // Khởi tạo DbHelper
+        dbHelper.syncCoursesWithFirebase(); // Đồng bộ dữ liệu khóa học từ Firebase xuống local
 
-        courses = getCourses();
+        courses = getCourses(); // Lấy danh sách các khóa học
 
         listViewCourse = findViewById(R.id.list_courses);
         courseViewAdapter = new CourseAdapter(this, courses);
@@ -44,6 +44,7 @@ public class ViewCourseActivity extends AppCompatActivity {
         listViewCourse.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                // Khi click vào một khóa học, chuyển sang màn hình chỉnh sửa khóa học đó
                 Course course = (Course) adapterView.getItemAtPosition(position);
                 Intent intent = new Intent(ViewCourseActivity.this, EditCourseActivity.class);
                 intent.putExtra("COURSE_ID", course.getId());
@@ -55,6 +56,7 @@ public class ViewCourseActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
+        // Cập nhật lại danh sách khóa học khi quay lại màn hình
         courses = getCourses();
         courseViewAdapter.notifyDataSetChanged();
     }
@@ -66,6 +68,7 @@ public class ViewCourseActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             do {
+                // Tạo một đối tượng Course và gán dữ liệu từ cơ sở dữ liệu
                 Course course = new Course();
                 course.setId(cursor.getString(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_COURSE_ID)));
                 course.setName(cursor.getString(cursor.getColumnIndexOrThrow(DbHelper.COLUMN_COURSE_NAME)));
@@ -80,7 +83,7 @@ public class ViewCourseActivity extends AppCompatActivity {
             } while (cursor.moveToNext());
         }
 
-        cursor.close();
+        cursor.close(); // Đóng con trỏ để giải phóng tài nguyên
         return courseList;
     }
 }
